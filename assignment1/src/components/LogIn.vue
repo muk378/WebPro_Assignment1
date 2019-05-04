@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="login">
     <h1>{{ msg }}</h1>
     <!--ex1-->
     <button v-on:click="showAlert">cilck here!</button>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'LogIn',
   data () {
     return {
       msg: 'Welcome to EGCO427'

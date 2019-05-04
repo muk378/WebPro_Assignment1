@@ -8,9 +8,9 @@
           height="30"
         >
       </div>
-      <a class="active item" href="#/Users">Contacts</a>
+      <a class="item" href="#/Users">Contacts</a>
       <div class="right menu">
-      <a class="item" href="#/Login">
+      <a class="item" href="#/LogIn">
         <i class="user icon"></i>
       </a>
       </div>

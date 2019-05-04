@@ -20,10 +20,16 @@
       <!-- /.col-lg-6 -->
     </div>
 
-    <div class="container-fluid" style="margin-top: 10px;">
-      <div class="content-card">
-        <div class="ui card" v-for="auser in filterdUsers" v-bind:key="auser._id">
-          <img class="team-pic" v-bind:src="auser.imageUrl" width="auto" height="200">
+    <div class="container-fluid">
+      <!-- <div class="content-card"> -->
+      <div class="ui celled grid">
+        <div
+          class="ui card"
+          style="margin: 30px auto 20px 30px;"
+          v-for="auser in filterdUsers"
+          v-bind:key="auser._id"
+        >
+          <img class="team-pic" v-bind:src="auser.imageUrl" width="auto" height="250">
           <div class="content">
             <a class="header">{{auser.firstName}} {{auser.lastName}}</a>
             <div class="meta">
@@ -55,6 +61,7 @@
           </div>
         </div>
       </div>
+      <!-- </div> -->
     </div>
 
     <div

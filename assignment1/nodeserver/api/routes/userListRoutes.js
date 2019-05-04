@@ -10,4 +10,6 @@ module.exports = function(app){
         .get(userList.readAUser)
         .delete(userList.deleteAUser)
         .post(userList.updateAUser)
+
+    app.route('/login')
 }

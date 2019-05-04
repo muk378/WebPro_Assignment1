@@ -1,49 +1,56 @@
 <template>
   <div class="adduser">
     <h1>{{ title }}</h1>
-    <div class="vframe">
-      <!--vframe is a name that you crate by yourself-->
-      <form action=" ">
-        <div class="form-group">
-          <label class="pull-left">Contact ID :</label>
-          <input type="text" class="form-control" v-model="User.contactID" placeholder="Contact ID">
-        </div>
-        <div class="form-group">
-          <label class="pull-left">Firstname :</label>
-          <input type="text" class="form-control" v-model="User.firstName" placeholder="First Name">
-        </div>
-        <div class="form-group">
-          <label class="pull-left">Lastname :</label>
-          <input type="text" class="form-control" v-model="User.lastName" placeholder="Last Name">
-        </div>
-        <div class="form-group">
+    <div class="container">
+      <div class="vframe">
+        <!--vframe is a name that you crate by yourself-->
+        <form action=" ">
+          <div class="form-group">
+            <label class="pull-left">Contact ID :</label>
+            <input
+              type="text"
+              class="form-control"
+              v-model="User.contactID"
+              placeholder="Contact ID"
+            >
+          </div>
+          <div class="form-group">
+            <label class="pull-left">Firstname :</label>
+            <input
+              type="text"
+              class="form-control"
+              v-model="User.firstName"
+              placeholder="First Name"
+            >
+          </div>
+          <div class="form-group">
+            <label class="pull-left">Lastname :</label>
+            <input type="text" class="form-control" v-model="User.lastName" placeholder="Last Name">
+          </div>
+          <div class="form-group">
             <label class="pull-left">Mobile No :</label>
             <input type="text" class="form-control" v-model="User.mobileNo" placeholder="Mobile No">
-        </div>
-        <div class="form-group">
-          <label class="pull-left">Email :</label>
-          <input type="text" class="form-control" v-model="User.email" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label class="pull-left">Facebook :</label>
-          <input type="text" class="form-control" v-model="User.faceBook" placeholder="Facebook">
-        </div>
-        <div class="form-group">
-          <label class="pull-left">Image Url :</label>
-          <input type="text" class="form-control" v-model="User.imageUrl" placeholder="Image Url">
-        </div>
-        <button
-          type="sumbit"
-          class="btn-btn-large btn-block btn-primary full-width"
-          @click="addToAPI"
-        >Submit</button>
-        <router-link to="/users">
-          <button
-            type="sumbit"
-            class="btn-btn-large btn-block btn-success full-width"
-          >Go to User Page</button>
-        </router-link>
-      </form>
+          </div>
+          <div class="form-group">
+            <label class="pull-left">Email :</label>
+            <input type="text" class="form-control" v-model="User.email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label class="pull-left">Facebook :</label>
+            <input type="text" class="form-control" v-model="User.faceBook" placeholder="Facebook">
+          </div>
+          <div class="form-group">
+            <label class="pull-left">Image Url :</label>
+            <input type="text" class="form-control" v-model="User.imageUrl" placeholder="Image Url">
+          </div>
+          <span>
+            <button type="sumbit" class="btn btn-large btn-primary" @click="addToAPI">Save</button>
+            <router-link to="/users">
+              <button type="sumbit" class="btn btn-large btn-danger">Cancal</button>
+            </router-link>
+          </span>
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -54,16 +61,15 @@ export default {
   name: "AddUser",
   data() {
     return {
-      title: "Add User",
+      title: "Contact Add",
       User: {
-        contactID:"",
+        contactID: "",
         firstName: "",
         lastName: "",
-        mobileNo:"",
+        mobileNo: "",
         email: "",
         faceBook: "",
         imageUrl: ""
-
       }
     };
   },
