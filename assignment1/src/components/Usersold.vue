@@ -1,7 +1,7 @@
 <template>
   <div class="users">
     <!-- <h1>{{ Title }}</h1> -->
-    <div class="container-fluid">
+    <div class="row">
       <div class="col-lg-12">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search for..." v-model="search">
@@ -10,9 +10,6 @@
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
               Search
             </button>
-            <router-link to="/adduser">
-              <button class="btn btn-large btn-success">Add User</button>
-            </router-link>
           </span>
         </div>
         <!-- /input-group -->
@@ -20,42 +17,43 @@
       <!-- /.col-lg-6 -->
     </div>
 
-    <div class="container-fluid" style="margin-top: 10px;">
-      <div class="content-card">
-        <div class="ui card" v-for="auser in filterdUsers" v-bind:key="auser._id">
-          <img class="team-pic" v-bind:src="auser.imageUrl" width="auto" height="200">
-          <div class="content">
-            <a class="header">{{auser.firstName}} {{auser.lastName}}</a>
-            <div class="meta">
-              <span class="mobileno">Mobile : {{auser.mobileNo}}</span>
-              <br>
-              <span class="email">Email : {{auser.email}}</span>
-              <br>
-              <span class="facebook">Facebook : http://facebook.com/{{auser.faceBook}}</span>
-            </div>
-          </div>
-          <div class="extra content">
-            <a>
-              <router-link :to="{ path: 'updateuser/' + auser._id}">
-                <button class="btn btn-xs btn-primary">
-                  <span class="glyphicon glyphicon-pencil"></span>
-                </button>
-              </router-link>
-            </a>
-            <a>
-              <button
-                class="btn btn-xs btn-danger"
-                data-toggle="modal"
-                data-target=".bd-example-modal-sm"
-                @click="DELETE(auser._id)"
-              >
-                <span class="glyphicon glyphicon-erase"></span>
+    <table class="table table-stripped table-borders">
+      <thead>
+        <tr>
+          <th class="center">First Name</th>
+          <th class="center">Last Name</th>
+          <th class="center">Email</th>
+          <th class="center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="auser in filterdUsers" v-bind:key="auser._id">
+          <td class="text-left">{{auser.firstName}}</td>
+          <td class="text-left">{{auser.lastName}}</td>
+          <td class="text-left">{{auser.email}}</td>
+          <td class="text-left">
+            <router-link :to="{ path: 'updateuser/' + auser._id}">
+              <button class="btn btn-xs btn-warning">
+                <span class="glyphicon glyphicon-pencil"></span>
               </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+            </router-link>
+
+            <button
+              class="btn btn-xs btn-danger"
+              data-toggle="modal"
+              data-target=".bd-example-modal-sm"
+              @click="DELETE(auser._id)"
+            >
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <router-link to="/adduser">
+      <button class="btn btn-large btn-block btn-success full-width">Add User</button>
+    </router-link>
 
     <div
       class="modal fade bd-example-modal-sm"
@@ -112,7 +110,6 @@ export default {
         });
       window.location.reload();
     },
-
     DELETE(uid) {
       $("#my-modal").modal("show");
       this.uid = id;

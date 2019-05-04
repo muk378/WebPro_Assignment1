@@ -11,8 +11,19 @@ var UserSchema = new Schema({
         type: String,
         Required: 'Please enter'
     },
-    //missed left last_name
-        email: {
+    mobileNo: {
+        type: Number,
+        Required: 'Please enter'
+    },
+    email: {
+        type: String,
+        Required: 'Please enter'
+    },
+    faceBook: {
+        type: String,
+        Required: 'Please enter'
+    },
+    imageUrl: {
         type: String,
         Required: 'Please enter'
     },

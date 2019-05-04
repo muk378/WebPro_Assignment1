@@ -4,13 +4,13 @@
       <div class="item">
         <img
           src="https://d262ilb51hltx0.cloudfront.net/max/800/1*NNqI6Nm62DOVKRTyIp-GRg.png"
-          width="40"
-          height="40"
+          width="50"
+          height="30"
         >
       </div>
       <a class="active item" href="#/Users">Contacts</a>
       <div class="right menu">
-      <a class="item">
+      <a class="item" href="#/Login">
         <i class="user icon"></i>
       </a>
       </div>

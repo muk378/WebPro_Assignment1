@@ -3,17 +3,33 @@
     <form>
       <div class="well">
         <h4>Update User</h4>
-        <div class="form-group" >
-          <label class="pull-left">First Name: </label>
-          <input type="text" class="form-control" placeholder="First Name" v-model="User.firstName">
+        <div class="form-group">
+          <label class="pull-left">Contact ID :</label>
+          <input type="text" class="form-control" v-model="User.contactID" placeholder="Contact ID">
         </div>
-        <div class="form-group" >
-          <label class="pull-left">Last Name: </label>
-          <input type="text" class="form-control" placeholder="Last Name" v-model="User.lastName">
+        <div class="form-group">
+          <label class="pull-left">Firstname :</label>
+          <input type="text" class="form-control" v-model="User.firstName" placeholder="First Name">
         </div>
-        <div class="form-group" >
-          <label class="pull-left">Email: </label>
-          <input type="email" class="form-control" placeholder="Email" v-model="User.email">
+        <div class="form-group">
+          <label class="pull-left">Lastname :</label>
+          <input type="text" class="form-control" v-model="User.lastName" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+            <label class="pull-left">Mobile No :</label>
+            <input type="text" class="form-control" v-model="User.mobileNo" placeholder="Mobile No">
+        </div>
+        <div class="form-group">
+          <label class="pull-left">Email :</label>
+          <input type="text" class="form-control" v-model="User.email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label class="pull-left">Facebook :</label>
+          <input type="text" class="form-control" v-model="User.faceBook" placeholder="Facebook">
+        </div>
+        <div class="form-group">
+          <label class="pull-left">Image Url :</label>
+          <input type="text" class="form-control" v-model="User.imageUrl" placeholder="Image Url">
         </div>
       </div>
       <router-link to="/users">
@@ -33,9 +49,13 @@ export default {
     return {
       msg: 'Update User',
       User: {
+        contactID:'',
         firstName: '',
         lastName: '',
-        email: ''
+        mobileNo:'',
+        email: '',
+        faceBook: '',
+        imageUrl: ''
       }
     }
   },
@@ -43,9 +63,13 @@ export default {
     updateToAPI () {
       console.log(this.$route.params.userId)
       let newUser = {
+        contactID: this.User.contactID,
         firstName: this.User.firstName,
         lastName: this.User.lastName,
-        email: this.User.email
+        mobileNo: this.User.mobileNo,
+        email: this.User.email,
+        faceBook: this.User.faceBook,
+        imageUrl: this.User.imageUrl
       }
       console.log(newUser)
       axios.post('http://localhost:3000/users/' + this.$route.params.userId, newUser)
