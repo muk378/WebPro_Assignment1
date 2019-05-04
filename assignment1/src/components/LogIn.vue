@@ -1,32 +1,73 @@
 <template>
   <div class="login">
     <h1>{{ msg }}</h1>
-    <!--ex1-->
-    <button v-on:click="showAlert">cilck here!</button>
-   
+    <div class="container-fluid">
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        <h2 class="ui teal image header">
+          <img class="image" src>
+          <div class="content">Log-in to your account</div>
+        </h2>
+        <form class="ui large form error">
+          <div class="ui stacked segment">
+            <div class="field error">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input name="email" type="text" placeholder="E-mail address">
+              </div>
+            </div>
+            <div class="field error">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input name="password" type="password" placeholder="Password">
+              </div>
+            </div>
+            <div class="ui fluid large teal submit button">Login</div>
+          </div>
+
+          <div class="ui error message">
+            <ul class="list">
+              <li>Please enter a valid e-mail</li>
+              <li>Your password must be at least 6 characters</li>
+            </ul>
+          </div>
+        </form>
+
+        <div class="ui message">
+          New to us?
+          <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'LogIn',
-  data () {
+  name: "LogIn",
+  data() {
     return {
-      msg: 'Welcome to EGCO427'
-    }
+      msg: "Log In",
+      Login: {
+        userName: "",
+        passWord: ""
+      }
+    };
   },
-  methods:{
-    showAlert:function(){
-      console.log("alert")
-      alert("Gotcha!")
+  methods: {
+    showAlert: function() {
+      console.log("alert");
+      alert("Gotcha!");
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {

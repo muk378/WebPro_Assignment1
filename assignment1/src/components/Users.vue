@@ -24,7 +24,7 @@
       <!-- <div class="content-card"> -->
       <div class="ui celled grid">
         <div
-          class="ui card"
+          class="ui stackable card"
           style="margin: 30px auto 20px 30px;"
           v-for="auser in filterdUsers"
           v-bind:key="auser._id"
@@ -40,6 +40,7 @@
               <span class="facebook">Facebook : http://facebook.com/{{auser.faceBook}}</span>
             </div>
           </div>
+
           <div class="extra content">
             <a>
               <router-link :to="{ path: 'updateuser/' + auser._id}">

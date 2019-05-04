@@ -11,5 +11,5 @@ module.exports = function(app){
         .delete(userList.deleteAUser)
         .post(userList.updateAUser)
 
-    app.route('/login')
+    // app.route('/login')
 }
