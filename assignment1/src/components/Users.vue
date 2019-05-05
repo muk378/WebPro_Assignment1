@@ -14,54 +14,52 @@
             </router-link>
           </span>
         </div>
-        <!-- /input-group -->
       </div>
-      <!-- /.col-lg-6 -->
     </div>
 
-    <div class="ui container">
-      <!-- <div class="content-card"> -->
-      <div class="ui celled grid">
-        <div
-          class="ui stackable card"
-          style="margin: 30px auto 20px 30px;"
-          v-for="auser in filterdUsers"
-          :key="auser._id"
-        >
-          <img class="team-pic" v-bind:src="auser.imageUrl" width="auto" height="250">
-          <div class="content">
-            <a class="header">{{auser.firstName}} {{auser.lastName}}</a>
-            <div class="meta">
-              <span class="mobileno">Mobile : {{auser.mobileNo}}</span>
-              <br>
-              <span class="email">Email : {{auser.email}}</span>
-              <br>
-              <span class="facebook">Facebook : http://facebook.com/{{auser.faceBook}}</span>
+    
+    <div class="ui segment">
+      <div class="ui grid">
+        <div class="four wide column" v-for="auser in filterdUsers" :key="auser._id">
+          <div class="ui link cards">
+            <div class="card">
+              <!-- style="margin: 30px auto 20px 30px;" -->
+              <div class="image">
+                <img class="image" style="height='250'" v-bind:src="auser.imageUrl">
+              </div>
+              <div class="content">
+                <a class="header">{{auser.firstName}} {{auser.lastName}}</a>
+                <div class="meta">
+                  <span class="mobileno">Mobile : {{auser.mobileNo}}</span>
+                  <br>
+                  <span class="email">Email : {{auser.email}}</span>
+                  <br>
+                  <span class="facebook">Facebook : http://facebook.com/{{auser.faceBook}}</span>
+                </div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <router-link :to="{ path: 'updateuser/' + auser._id}">
+                    <button class="btn btn-xs btn-primary">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                  </router-link>
+                </a>
+                <a>
+                  <button
+                    class="btn btn-xs btn-danger"
+                    data-toggle="modal"
+                    data-target=".bd-example-modal-sm"
+                    @click="DELETE(auser._id)"
+                  >
+                    <span class="glyphicon glyphicon-erase"></span>
+                  </button>
+                </a>
+              </div>
             </div>
-          </div>
-
-          <div class="extra content">
-            <a>
-              <router-link :to="{ path: 'updateuser/' + auser._id}">
-                <button class="btn btn-xs btn-primary">
-                  <span class="glyphicon glyphicon-pencil"></span>
-                </button>
-              </router-link>
-            </a>
-            <a>
-              <button
-                class="btn btn-xs btn-danger"
-                data-toggle="modal"
-                data-target=".bd-example-modal-sm"
-                @click="DELETE(auser._id)"
-              >
-                <span class="glyphicon glyphicon-erase"></span>
-              </button>
-            </a>
           </div>
         </div>
       </div>
-      <!-- </div> -->
     </div>
 
     <div
@@ -166,4 +164,8 @@ li {
 a {
   color: #42b983;
 }
+/* img.image {
+  width:auto;
+  height:250px;
+} */
 </style>
