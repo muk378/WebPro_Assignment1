@@ -1,6 +1,5 @@
 <template>
   <div class="users">
-    <!-- <h1>{{ Title }}</h1> -->
     <div class="container-fluid">
       <div class="col-lg-12">
         <div class="input-group">
@@ -23,7 +22,7 @@
     <div class="ui container">
       <!-- <div class="content-card"> -->
       <div class="ui celled grid">
-        <div 
+        <div
           class="ui stackable card"
           style="margin: 30px auto 20px 30px;"
           v-for="auser in filterdUsers"

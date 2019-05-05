@@ -3,6 +3,10 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var UserSchema = new Schema({
+    contactID: {
+        type: String,
+        Required: 'Please enter'
+    },
     firstName: {
         type: String,
         Required: 'Please enter'

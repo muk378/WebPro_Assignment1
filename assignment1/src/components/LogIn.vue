@@ -1,12 +1,10 @@
 <template>
   <div class="container" style="margin: 30px auto 20px auto;">
     <div>
-      <!-- <h1>{{ msg }}</h1> -->
       <div class="container-fluid">
         <div class="ui middle aligned center aligned grid">
           <div class="column">
             <h2 class="ui teal image header">
-              <!-- <img class="image" src> -->
               <div class="content">Log-in to your account</div>
             </h2>
             <form class="ui large form error">
@@ -71,8 +69,6 @@ export default {
   },
   methods: {
     login() {
-      
-      // console.log(this.$route.params.checkUser)
       let checkUser = {
         userName: this.Login.userName,
         passWord: this.Login.passWord
@@ -82,14 +78,11 @@ export default {
         .get("http://localhost:3000/login/" + this.Login.userName)
         .then(response => {
           console.log(response);
-          var data = response.data
-          // if (!this.Login.userName) {
-          //   res.console.error();
-          // } else {
-            if (data[0].passWord == this.Login.passWord) {
-              this.$router.push({ path: './users' })
-            }
-          // }
+          var data = response.data;
+
+          if (data[0].passWord == this.Login.passWord) {
+            this.$router.push({ path: "./users" });
+          }
         })
         .catch(error => {
           console.log(error);

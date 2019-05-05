@@ -1,9 +1,8 @@
 'use strict'
 var mongoose = require('mongoose')
 User = mongoose.model('Users')
-
-// Login = mongoose.model('Logins')
 checkUser = mongoose.model('Logins')
+
 exports.listAllUsers = function(req, res){
     var query = { sort: { firstName: 1 } }
     User.find({}, null, query, function(err, user){
@@ -21,7 +20,7 @@ exports.createAUser = function(req, res){
     })
 }
 
-exports.getMany = function(req, res){
+exports.readAUser  = function(req, res){
     //console.log(req.params.userId)
     User.findById(req.params.userId, function(err, user){
         if(err) throw err
@@ -29,7 +28,7 @@ exports.getMany = function(req, res){
     })
 }
 
-exports.delete = function(req, res){
+exports.deleteAUser = function(req, res){
     //console.log(req.params.userId)
     User.findByIdAndRemove(req.params.userId, function(err, user){
         if(err) throw err
@@ -41,7 +40,7 @@ exports.delete = function(req, res){
     })
 }
 
-exports.update = function(req, res){
+exports.updateAUser = function(req, res){
     console.log(req.params.userId)
     var newUser = {}
     newUser = req.body
@@ -59,7 +58,5 @@ exports.authen = function(req, res){
         if(err) throw err
             //console.log(user)
         res.json(userr)
-
-
 })
 }
