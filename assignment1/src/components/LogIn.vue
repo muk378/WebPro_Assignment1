@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="margin: 30px auto 20px auto;">
-    <div class="login">
+    <div>
       <!-- <h1>{{ msg }}</h1> -->
       <div class="container-fluid">
         <div class="ui middle aligned center aligned grid">
@@ -14,27 +14,40 @@
                 <div class="field error">
                   <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input name="username" type="username" class="form-control" placeholder="๊User Account">
+                    <input
+                      name="userName"
+                      type="userName"
+                      class="form-control"
+                      v-model="Login.userName"
+                      placeholder="๊User Account"
+                    >
                   </div>
                 </div>
                 <div class="field error">
                   <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input name="password" type="password" class="form-control" placeholder="Password">
+                    <input
+                      name="passWord"
+                      type="passWord"
+                      class="form-control"
+                      v-model="Login.passWord"
+                      placeholder="Password"
+                    >
                   </div>
                 </div>
                 <!-- <div class="ui fluid large teal submit button">Login</div> -->
-                <button class="btn btn-success btn-block full-width" @click="signIn">Log in</button>
               </div>
 
+              <!-- <div class="alert alert-danger" v-if="error">{{ error }}</div> -->
               <!-- <div class="ui error message">
                 <ul class="list">
                   <li>Please enter you</li>
                   <br>
                   <li>Your password must be at least 6 characters</li>
                 </ul>
-              </div> -->
+              </div>-->
             </form>
+            <button class="btn btn-success btn-block full-width" @click="login">Log in</button>
           </div>
         </div>
       </div>
@@ -43,6 +56,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "LogIn",
   data() {
@@ -51,13 +65,26 @@ export default {
       Login: {
         userName: "",
         passWord: ""
+        // error: false
       }
     };
   },
   methods: {
-    showAlert: function() {
-      console.log("alert");
-      alert("Gotcha!");
+    login() {
+      console.log(this.$route.params.checkUser);
+      let checkUser = {
+        userName: this.Login.userName,
+        passWord: this.Login.passWord
+      };
+      console.log(checkUser);
+      axios
+        .get("http://localhost:3000/login/" + this.Login.userName)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   }
 };

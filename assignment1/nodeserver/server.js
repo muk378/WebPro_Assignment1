@@ -3,6 +3,7 @@ app = express()
 port = process.env.PORT || 3000
 mongoose = require('mongoose')
 User = require('./api/models/userListModel')
+checkUser=require('./api/models/userListModel')
 bodyParser = require('body-parser')
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/VueUser', function(error){

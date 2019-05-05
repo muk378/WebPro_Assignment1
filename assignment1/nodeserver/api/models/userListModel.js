@@ -34,4 +34,17 @@ var UserSchema = new Schema({
     },
 })
 
+
+var LoginSchema = new Schema({
+    userName: {
+        type: String,
+        Required: 'Please enter'
+    },
+    passWord: {
+        type: String,
+        Required: 'Please enter'
+    }
+})
+
 module.exports = mongoose.model('Users', UserSchema)
+module.exports = mongoose.model('Logins', LoginSchema)

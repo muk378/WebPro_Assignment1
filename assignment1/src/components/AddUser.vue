@@ -44,9 +44,14 @@
             <input type="text" class="form-control" v-model="User.imageUrl" placeholder="Image Url">
           </div>
           <span>
-            <button type="sumbit" class="btn btn-large btn-primary" @click="addToAPI">Save</button>
+            <!-- <button type="sumbit" class="btn btn-large btn-primary" @click="addToAPI">Save</button>
             <router-link to="/users">
               <button type="sumbit" class="btn btn-large btn-danger">Cancal</button>
+            </router-link> -->
+
+            <button type="submit" class="btn btn-default" @click="addToAPI"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save</button>
+            <router-link to="/users">
+            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Close</button>
             </router-link>
           </span>
         </form>
