@@ -71,7 +71,8 @@ export default {
   },
   methods: {
     login() {
-      console.log(this.$route.params.checkUser);
+      
+      // console.log(this.$route.params.checkUser)
       let checkUser = {
         userName: this.Login.userName,
         passWord: this.Login.passWord
@@ -81,6 +82,14 @@ export default {
         .get("http://localhost:3000/login/" + this.Login.userName)
         .then(response => {
           console.log(response);
+          var data = response.data
+          // if (!this.Login.userName) {
+          //   res.console.error();
+          // } else {
+            if (data[0].passWord == this.Login.passWord) {
+              this.$router.push({ path: './users' })
+            }
+          // }
         })
         .catch(error => {
           console.log(error);

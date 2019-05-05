@@ -54,37 +54,12 @@ exports.update = function(req, res){
 }
 
 
-
 exports.authen = function(req, res){
-    checkUser.find({userName: req.params.userName}, function(err, user) {
-            if (err) throw err;
-            res.json(user)
-    
-        
-      })
+    checkUser.find({userName: req.params.userName}, function(err,userr) {
+        if(err) throw err
+            //console.log(user)
+        res.json(userr)
+
+
+})
 }
-
-
-// router.post('/login', function(req, res) {
-//     checkUser.findOne({
-//       userName: req.body.userName
-//     }, function(err, user) {
-//       if (err) throw err;
-  
-//       if (!user) {
-//         res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
-//       } else {
-//         // check if password matches
-//         user.comparePassword(req.body.passWord, function (err, isMatch) {
-//           if (isMatch && !err) {
-//             // if user is found and password is right create a token
-//             var token = jwt.sign(user.toJSON(), settings.secret);
-//             // return the information including token as JSON
-//             res.json({success: true, token: 'JWT ' + token});
-//           } else {
-//             res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
-//           }
-//         });
-//       }
-//     });
-//   });

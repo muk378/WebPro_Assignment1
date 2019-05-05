@@ -22,8 +22,8 @@
 
     <div class="ui container">
       <!-- <div class="content-card"> -->
-      <div class="ui four column grid" >
-        <div
+      <div class="ui celled grid">
+        <div 
           class="ui stackable card"
           style="margin: 30px auto 20px 30px;"
           v-for="auser in filterdUsers"
