@@ -25,7 +25,7 @@
             <div class="card">
               <!-- style="margin: 30px auto 20px 30px;" -->
               <div class="image">
-                <img class="image" style="height='250'" v-bind:src="auser.imageUrl">
+                <img style="width:autox; height:250px;"  v-bind:src="auser.imageUrl">
               </div>
               <div class="content">
                 <a class="header">{{auser.firstName}} {{auser.lastName}}</a>
