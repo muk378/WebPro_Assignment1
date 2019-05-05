@@ -25,16 +25,16 @@
             <div class="card">
               <!-- style="margin: 30px auto 20px 30px;" -->
               <div class="image">
-                <img style="width:autox; height:250px;"  v-bind:src="auser.imageUrl">
+                <img style="height:250px;"  v-bind:src="auser.imageUrl">
               </div>
               <div class="content">
                 <a class="header">{{auser.firstName}} {{auser.lastName}}</a>
                 <div class="meta">
-                  <span class="mobileno">Mobile : {{auser.mobileNo}}</span>
+                  <a class="mobileno">Mobile : {{auser.mobileNo}}</a>
                   <br>
-                  <span class="email">Email : {{auser.email}}</span>
+                  <a class="email">Email : {{auser.email}}</a>
                   <br>
-                  <span class="facebook">Facebook : http://facebook.com/{{auser.faceBook}}</span>
+                  <a class="facebook">Facebook : http://facebook.com/{{auser.faceBook}}</a>
                 </div>
               </div>
               <div class="extra content">
