@@ -20,14 +20,14 @@
       <!-- /.col-lg-6 -->
     </div>
 
-    <div class="container-fluid">
+    <div class="ui container">
       <!-- <div class="content-card"> -->
-      <div class="ui celled grid">
+      <div class="ui four column grid" >
         <div
           class="ui stackable card"
           style="margin: 30px auto 20px 30px;"
           v-for="auser in filterdUsers"
-          v-bind:key="auser._id"
+          :key="auser._id"
         >
           <img class="team-pic" v-bind:src="auser.imageUrl" width="auto" height="250">
           <div class="content">
@@ -109,7 +109,7 @@ export default {
 
   methods: {
     delUser(userId) {
-      var url = "http://localhost:3000/users" + userId;
+      var url = "http://localhost:3000/users/" + userId;
       axios
         .delete(url)
         .then(response => {
@@ -123,7 +123,7 @@ export default {
 
     DELETE(uid) {
       $("#my-modal").modal("show");
-      this.uid = id;
+      this.uid = uid;
     }
   },
 

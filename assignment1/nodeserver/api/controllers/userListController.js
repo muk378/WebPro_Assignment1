@@ -19,7 +19,7 @@ exports.createAUser = function(req, res){
     })
 }
 
-exports.readAUser = function(req, res){
+exports.getMany = function(req, res){
     //console.log(req.params.userId)
     User.findById(req.params.userId, function(err, user){
         if(err) throw err
@@ -27,7 +27,7 @@ exports.readAUser = function(req, res){
     })
 }
 
-exports.deleteAUser = function(req, res){
+exports.delete = function(req, res){
     //console.log(req.params.userId)
     User.findByIdAndRemove(req.params.userId, function(err, user){
         if(err) throw err
@@ -39,7 +39,7 @@ exports.deleteAUser = function(req, res){
     })
 }
 
-exports.updateAUser = function(req, res){
+exports.update = function(req, res){
     console.log(req.params.userId)
     var newUser = {}
     newUser = req.body

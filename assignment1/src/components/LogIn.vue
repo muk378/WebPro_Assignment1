@@ -1,44 +1,43 @@
 <template>
-  <div class="login">
-    <h1>{{ msg }}</h1>
-    <div class="container-fluid">
-    <div class="ui middle aligned center aligned grid">
-      <div class="column">
-        <h2 class="ui teal image header">
-          <img class="image" src>
-          <div class="content">Log-in to your account</div>
-        </h2>
-        <form class="ui large form error">
-          <div class="ui stacked segment">
-            <div class="field error">
-              <div class="ui left icon input">
-                <i class="user icon"></i>
-                <input name="email" type="text" placeholder="E-mail address">
+  <div class="container" style="margin: 30px auto 20px auto;">
+    <div class="login">
+      <!-- <h1>{{ msg }}</h1> -->
+      <div class="container-fluid">
+        <div class="ui middle aligned center aligned grid">
+          <div class="column">
+            <h2 class="ui teal image header">
+              <!-- <img class="image" src> -->
+              <div class="content">Log-in to your account</div>
+            </h2>
+            <form class="ui large form error">
+              <div class="ui stacked segment">
+                <div class="field error">
+                  <div class="ui left icon input">
+                    <i class="user icon"></i>
+                    <input name="username" type="username" class="form-control" placeholder="๊User Account">
+                  </div>
+                </div>
+                <div class="field error">
+                  <div class="ui left icon input">
+                    <i class="lock icon"></i>
+                    <input name="password" type="password" class="form-control" placeholder="Password">
+                  </div>
+                </div>
+                <!-- <div class="ui fluid large teal submit button">Login</div> -->
+                <button class="btn btn-success btn-block full-width" @click="signIn">Log in</button>
               </div>
-            </div>
-            <div class="field error">
-              <div class="ui left icon input">
-                <i class="lock icon"></i>
-                <input name="password" type="password" placeholder="Password">
-              </div>
-            </div>
-            <div class="ui fluid large teal submit button">Login</div>
-          </div>
 
-          <div class="ui error message">
-            <ul class="list">
-              <li>Please enter a valid e-mail</li>
-              <li>Your password must be at least 6 characters</li>
-            </ul>
+              <!-- <div class="ui error message">
+                <ul class="list">
+                  <li>Please enter you</li>
+                  <br>
+                  <li>Your password must be at least 6 characters</li>
+                </ul>
+              </div> -->
+            </form>
           </div>
-        </form>
-
-        <div class="ui message">
-          New to us?
-          <a href="#">Sign Up</a>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </template>

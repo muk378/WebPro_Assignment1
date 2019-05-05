@@ -7,9 +7,9 @@ module.exports = function(app){
         .post(userList.createAUser)
 
     app.route('/users/:userId')
-        .get(userList.readAUser)
-        .delete(userList.deleteAUser)
-        .post(userList.updateAUser)
+        .get(userList.getMany)
+        .delete(userList.delete)
+        .post(userList.update)
 
     // app.route('/login')
 }
